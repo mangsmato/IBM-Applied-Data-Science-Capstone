@@ -93,7 +93,7 @@ def get_scatter_plot(entered_site, payload):
     else:
         # return the outcomes scatter plot for a selected site
         print(payload, type(payload))
-        filtered_df = spacex_df[spacex_df['Launch Site'] == entered_site]
+        filtered_df = filtered_df[spacex_df['Launch Site'] == entered_site]
         fig = px.scatter(filtered_df, x='Payload Mass (kg)', y='class', color='Booster Version Category',
         title=f'Correlation between Payload and Success for {entered_site}')
         return fig
